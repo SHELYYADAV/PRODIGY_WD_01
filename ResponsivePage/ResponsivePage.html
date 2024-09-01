@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Landing Page</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+        min-height: 200vh;
+        color: #333;
+      }
+
+      .navbar {
+        position: fixed;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 15px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        z-index: 1000;
+      }
+
+      .navbar.scrolled {
+        background-color: #e1e8ed;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      .navbar ul li {
+        margin: 0 15px;
+      }
+
+      .navbar ul li a {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+
+      .navbar ul li a:hover {
+        color: #007bff;
+      }
+
+      .container {
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .heading {
+        font-size: 3rem;
+        color: #007bff;
+        margin-top: 100px;
+        animation: fadeInDown 1.5s;
+      }
+
+      .subheading {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 30px;
+        animation: fadeInUp 1.5s;
+      }
+
+      .cards-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .card {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 280px;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .card p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #0056b3;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar" id="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1 class="heading">Your Go-To Landing Page</h1>
+      <p class="subheading">
+        Crafted just for you with a love for clean, functional design!
+      </p>
+      <p style="font-size: 18px">
+        Ever wondered how to create a landing page that feels modern and
+        interactive? You're in the right place. This page has been thoughtfully
+        designed with easy-to-follow HTML, CSS, and JavaScript. Let's make
+        something awesome together!
+      </p>
+      <button class="button">Get Started</button>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="cards-container">
+      <div class="card">
+        <h3>Interactive Design</h3>
+        <p>
+          Design shouldn't just look good—it should feel good too. Let's create
+          a responsive layout that makes sense on every screen, from mobile to
+          desktop.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Dynamic Navigation</h3>
+        <p>
+          Your navigation bar is like your website's tour guide. Let's make sure
+          it's easy to follow, interactive, and always there when you need it.
+        </p>
+      </div>
+      <div class="card">
+        <h3>JavaScript Magic</h3>
+        <p>
+          Want to add some flair? With just a sprinkle of JavaScript, we can
+          create smooth transitions and hover effects that make your site pop.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
